@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setUserEmail } from '../actions';
-import { LockClosedIcon } from '@heroicons/react/solid'
+import { LockClosedIcon } from '@heroicons/react/solid';
+import bitcoinLogo from '../images/bitcoin.png';
 
 class Login extends React.Component {
   constructor() {
@@ -41,7 +42,14 @@ class Login extends React.Component {
     const { isEnable } = this.state;
     return (
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
+        <div className="max-w-md w-full space-y-8 md:relative md:rounded-xl md:ring-1 md:ring-black md:ring-opacity-5 md:shadow-sm w-full pt-8 pb-6 md:px-6 sm:px-0 md:bg-gray-100">
+          <div>
+            <img
+              className="mx-auto h-40 w-auto"
+              src={ bitcoinLogo }
+              alt="WalletLogo"
+            />
+          </div>
           <form className="mt-8 space-y-6" onSubmit={this.submitForm}>
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
