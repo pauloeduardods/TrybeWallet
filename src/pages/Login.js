@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setUserEmail } from '../actions';
 import { LockClosedIcon } from '@heroicons/react/solid';
-import bitcoinLogo from '../images/bitcoin.png';
+import logo from '../images/logo.png';
 
 class Login extends React.Component {
   constructor() {
@@ -46,7 +46,7 @@ class Login extends React.Component {
           <div>
             <img
               className="mx-auto h-40 w-auto"
-              src={ bitcoinLogo }
+              src={ logo }
               alt="WalletLogo"
             />
           </div>
@@ -88,7 +88,7 @@ class Login extends React.Component {
             <div>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className={` ${isEnable ? 'cursor-pointer' : 'cursor-not-allowed opacity-70'} group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
                 disabled={!isEnable}
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
