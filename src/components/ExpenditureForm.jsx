@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import {
   setExpenditure as setExpenditureAction,
   editExpenditure as editExpenditureAction } from '../actions';
+import { PencilAltIcon } from '@heroicons/react/outline'
+import { PlusCircleIcon } from '@heroicons/react/solid';
 
 const INITIAL_FORM = {
   value: '',
@@ -128,24 +130,33 @@ class ExpenditureForm extends React.Component {
 
   renderSubmitButton() {
     const { isEditing } = this.state;
-    if (!isEditing) return (<input type="submit" value="Adicionar despesa" />);
-    return (<input type="submit" value="Editar despesa" />);
+    if (!isEditing) return (
+      <button type="submit" className="mt-2 col-span-12 whitespace-nowrap inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-500 hover:bg-green-600">
+        <PlusCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />
+        Adicionar despesa
+      </button>
+    );
+    return (
+      <button type="submit" className="mt-2 col-span-12 whitespace-nowrap inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-yellow-500 hover:bg-yellow-600">
+        <PencilAltIcon className="h-6 w-6 mr-2" aria-hidden="true" />
+        Editar despesa
+      </button>
+    );
   }
 
   render() {
+    const { isEditing } = this.state;
+    const bgColor = isEditing ? 'bg-green-100' : 'bg-white'
     return (
       <form onSubmit={this.submit} className="max-w-7xl mx-auto px-4 sm:px-6 mt-5 md:col-span-2">
         <div className="shadow overflow-hidden sm:rounded-md">
-          <div className="px-4 py-5 bg-white sm:p-6">
+          <div className={`${bgColor} px-4 py-5 sm:p-6`}>
             <div className="grid grid-cols-12 gap-2">
               {this.renderInputs()}
-              {/* {this.renderSelect()} */}
+              {this.renderSubmitButton()}
             </div>
           </div>
         </div>
-        {/* {this.renderInputs()}
-        {this.renderSelect()}
-        {this.renderSubmitButton()} */}
       </form>
     );
   }
