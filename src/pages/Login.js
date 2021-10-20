@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setUserEmail } from '../actions';
-import { LockClosedIcon } from '@heroicons/react/solid'
+import { LockClosedIcon } from '@heroicons/react/solid';
+import logo from '../images/logo.png';
 
 class Login extends React.Component {
   constructor() {
@@ -41,7 +42,14 @@ class Login extends React.Component {
     const { isEnable } = this.state;
     return (
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
+        <div className="max-w-md w-full space-y-8 md:relative md:rounded-xl md:ring-1 md:ring-black md:ring-opacity-5 md:shadow-sm w-full pt-8 pb-6 md:px-6 sm:px-0 md:bg-gray-100">
+          <div>
+            <img
+              className="mx-auto h-40 w-auto"
+              src={ logo }
+              alt="WalletLogo"
+            />
+          </div>
           <form className="mt-8 space-y-6" onSubmit={this.submitForm}>
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
@@ -80,7 +88,7 @@ class Login extends React.Component {
             <div>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className={` ${isEnable ? 'cursor-pointer' : 'cursor-not-allowed opacity-70'} group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
                 disabled={!isEnable}
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
