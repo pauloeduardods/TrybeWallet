@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TrybeWallet/static/css/main.11ea2ecb.chunk.css",
-    "main.js": "/TrybeWallet/static/js/main.30148366.chunk.js",
-    "main.js.map": "/TrybeWallet/static/js/main.30148366.chunk.js.map",
+    "main.js": "/TrybeWallet/static/js/main.3dd58257.chunk.js",
+    "main.js.map": "/TrybeWallet/static/js/main.3dd58257.chunk.js.map",
     "runtime-main.js": "/TrybeWallet/static/js/runtime-main.614cea86.js",
     "runtime-main.js.map": "/TrybeWallet/static/js/runtime-main.614cea86.js.map",
     "static/css/2.6132113b.chunk.css": "/TrybeWallet/static/css/2.6132113b.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.6132113b.chunk.css",
     "static/js/2.acc6d33f.chunk.js",
     "static/css/main.11ea2ecb.chunk.css",
-    "static/js/main.30148366.chunk.js"
+    "static/js/main.3dd58257.chunk.js"
   ]
 }
