@@ -23,6 +23,7 @@ class ExpenditureForm extends React.Component {
       isEditing: false,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleNumberChange = this.handleNumberChange.bind(this);
     this.submit = this.submit.bind(this);
     this.renderInputs = this.renderInputs.bind(this);
     this.renderSubmitButton = this.renderSubmitButton.bind(this);
@@ -48,6 +49,12 @@ class ExpenditureForm extends React.Component {
     this.setState((prev) => ({ forms: { ...prev.forms, [id]: value } }));
   }
 
+  handleNumberChange({ target: { id, value } }) {
+    if (!isNaN(value)) {
+      this.setState((prev) => ({ forms: { ...prev.forms, [id]: value } }));
+    }
+  }
+
   async submit(event) {
     event.preventDefault();
     const { setExpenditure, editExpenditure } = this.props;
@@ -71,11 +78,11 @@ class ExpenditureForm extends React.Component {
               <span className="text-gray-500 sm:text-sm">$</span>
             </div>
             <input
-              type="number"
+              type="text"
               id="value"
               value={value}
               placeholder="Valor"
-              onChange={this.handleChange}
+              onChange={this.handleNumberChange}
               className="py-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-5 pr-12 sm:text-sm border-gray-300 rounded-md border-2"
             />
             <div className="absolute inset-y-0 right-0 flex items-center">
