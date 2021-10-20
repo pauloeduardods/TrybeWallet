@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import DeleteAndEditButton from './DeleteAndEditButton';
+import formatPrice from '../utils/formatPrice';
 
 class ExpenseTable extends React.Component {
   constructor() {
@@ -37,7 +38,7 @@ class ExpenseTable extends React.Component {
         <td className="sm:px-1 md:px-2 lg:px-3 py-4 whitespace-nowrap">
           <div className="flex items-center place-content-center">
             <div className="text-sm font-medium text-gray-900">
-              {`${currency} ${Number(value).toFixed(2)}`}
+              {`${currency} ${formatPrice(Number(value))}`}
             </div>
           </div>
         </td>
@@ -51,14 +52,14 @@ class ExpenseTable extends React.Component {
         <td className="sm:px-1 md:px-2 lg:px-3 py-4 whitespace-nowrap">
           <div className="flex items-center place-content-center">
             <div className="text-sm font-medium text-gray-900">
-              {Number(exchangeRates[currency].ask).toFixed(2)}
+              {formatPrice(Number(exchangeRates[currency].ask))}
             </div>
           </div>
         </td>
         <td className="sm:px-1 md:px-2 lg:px-3 py-4 whitespace-nowrap">
           <div className="flex items-center place-content-center">
             <div className="text-sm font-medium text-gray-900">
-              {(Number(exchangeRates[currency].ask) * Number(value)).toFixed(2)}
+              {formatPrice(Number(exchangeRates[currency].ask) * Number(value))}
             </div>
           </div>
         </td>

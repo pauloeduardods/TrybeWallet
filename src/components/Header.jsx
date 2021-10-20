@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Popover, Transition } from '@headlessui/react'
+import { Popover, Transition } from '@headlessui/react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.png';
 import {
@@ -10,7 +10,8 @@ import {
   CashIcon,
   MailIcon
 } from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon } from '@heroicons/react/solid';
+import formatPrice from '../utils/formatPrice';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -24,10 +25,11 @@ class Header extends React.Component {
 
   getTotal() {
     const { expenses } = this.props;
-    return Number(expenses.reduce((acc, cur) => {
+    const result = Number(expenses.reduce((acc, cur) => {
       const brlValue = Number(cur.value) * Number(cur.exchangeRates[cur.currency].ask);
       return acc + brlValue;
     }, 0)).toFixed(2);
+    return formatPrice(result)
   }
 
   render() {
