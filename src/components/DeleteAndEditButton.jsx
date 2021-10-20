@@ -26,18 +26,18 @@ class DeleteAndEditButton extends React.Component {
     return (
       <>
         <button
+          data-testid="edit-btn"
+          onClick={this.editExpense}
+          className="mr-2 whitespace-nowrap inline-flex items-center justify-center px-2 py-1 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-yellow-500 hover:bg-yellow-600"
+        >
+          <PencilAltIcon className="h-5 w-5" />
+        </button>
+        <button
           data-testid="delete-btn"
           onClick={ this.deleteExpense }
           className="mr-2 whitespace-nowrap inline-flex items-center justify-center px-2 py-1 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-500 hover:bg-red-700"
         >
           <TrashIcon className="h-5 w-5" />
-        </button>
-        <button
-          data-testid="edit-btn"
-          onClick={ this.editExpense }
-          className="mr-2 whitespace-nowrap inline-flex items-center justify-center px-2 py-1 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-yellow-500 hover:bg-yellow-600"
-        >
-          <PencilAltIcon className="h-5 w-5" />
         </button>
       </>
     );
