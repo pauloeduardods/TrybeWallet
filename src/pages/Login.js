@@ -42,7 +42,7 @@ class Login extends React.Component {
     const { isEnable } = this.state;
     return (
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8 md:relative md:rounded-xl md:ring-1 md:ring-black md:ring-opacity-5 md:shadow-sm w-full pt-8 pb-6 md:px-6 sm:px-0 md:bg-gray-100">
+        <div className="max-w-md w-full space-y-8 md:relative md:rounded-xl md:ring-1 md:ring-black md:ring-opacity-5 md:shadow-sm pt-8 pb-6 md:px-6 sm:px-0 md:bg-gray-100">
           <div>
             <img
               className="mx-auto h-40 w-auto"

@@ -15,7 +15,7 @@ class ExpenseTable extends React.Component {
       <tr key={ id }>
         <td className="sm:px-1 md:px-2 lg:px-3 py-4 whitespace-nowrap">
           <div className="flex items-center place-content-center">
-            <div className="text-sm font-medium text-gray-900 truncate max-w-xss">
+            <div className="text-sm font-medium text-gray-900 truncate sm:max-w-xss xl:max-w-mdd">
               {description || '-'}
             </div>
           </div>
