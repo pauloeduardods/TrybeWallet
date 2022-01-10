@@ -4,7 +4,7 @@ Link para a aplicação: https://pauloeduardods.github.io/TrybeWallet/
 
 Projeto consistia em fazer uma aplicação em React de um app para gestão de gastos
 
-<img src=""/>
+<img src="./TrybeWallet.png"/>
 
 
 ## Aprendizados
